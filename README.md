@@ -15,19 +15,24 @@ Currently tested under Windows with Python 2.7 and 3.9 and in Linux with Python 
 
 
 ## Cloning the repository
-Please note that there are submodules in the repository that need initialisation. So, to correctly clone the Ardublockly repository:
+Please note that there are submodules in the repository that need initialisation. So, to correctly clone the Smorphi-Blockly repository:
 
 ```
 git clone https://github.com/roarLab/Smorphi-Blockly.git
 
 ```
+Or download the zip file of the repository and unzip the file on your desired local storage space.
 
-
-## Installing
+## Running
 The desktop application is available for Windows/Linux and runs as a stand-alone executable.
 
 You will also need the [Arduino IDE version 1.6.x or higher][2].
 
+```
+cd Smorphi-Blockly/arduexec/server
+
+```
+Run ```start.exe```
 
 
 ## Credit
