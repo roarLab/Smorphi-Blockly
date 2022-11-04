@@ -39,10 +39,10 @@ Blockly.Arduino['initialize_bluetooth'] = function(block) {
   var BtName = 'SerialBT';
   var dropdown_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.addInclude('bluetooth', '#include "BluetoothSerial.h');
-  Blockly.Arduino.addInclude('esp_bt', '#include "esp_bt_main.h');
-  Blockly.Arduino.addInclude('esp_gap_bt', '#include "esp_gap_bt_api.h');
-  Blockly.Arduino.addInclude('esp_bt_device', '#include "esp_bt_device.h');
+  Blockly.Arduino.addInclude('bluetooth', '#include "BluetoothSerial.h"');
+  Blockly.Arduino.addInclude('esp_bt', '#include "esp_bt_main.h"');
+  Blockly.Arduino.addInclude('esp_gap_bt', '#include "esp_gap_bt_api.h"');
+  Blockly.Arduino.addInclude('esp_bt_device', '#include "esp_bt_device.h"');
   Blockly.Arduino.addInclude('if', '#if !defined(CONFIG_BT_ENABLED) || !defined(CONFIG_BLUEDROID_ENABLED)');
   Blockly.Arduino.addInclude('error', '#error Bluetooth is not enabled! Please run `make menuconfig` to and enable it');
   Blockly.Arduino.addInclude('endif', '#endif');

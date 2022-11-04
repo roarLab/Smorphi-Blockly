@@ -46,6 +46,18 @@ goog.require('Blockly.Events');
     this.setHelpUrl('http://www.example.com/');
   }
 };
+Blockly.Blocks['robot_shape'] = {
+  init: function() {
+    this.appendValueInput("NAME")
+        .setCheck("Number")
+        .appendField(new Blockly.FieldDropdown([["I_shape", "I"], ["O_shape", "O"], ["L_shape", "L"], ["J_shape", "J"], ["T_shape", "T"], ["S_shape", "S"], ["Z_shape", "Z"]]), "NAME");
+    this.setPreviousStatement(true, "String");
+    this.setNextStatement(true, "String");
+    this.setColour(20);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
 Blockly.Blocks['sm_reset'] = {
   init: function() {
     this.appendValueInput()
