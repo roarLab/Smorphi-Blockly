@@ -73,9 +73,29 @@ Blockly.Arduino['initialize_pixycam'] = function(block) {
   return code;
 };
 
+Blockly.Arduino['initialize_temp_sensors'] = function(block) {
+  /**
+ * Code generator to create if/if else/else statement.
+ * Arduino code: loop { if (X)/else if ()/else { X } }
+ * @param {!Blockly.Block} block Block to generate the code from.
+ * @return {string} Completed code.
+ */
+  //var pixyName = 'pixy';
+  // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.addInclude('pixy', '#include <OneWire.h>');
+  Blockly.Arduino.addInclude('pixy', '#include <DallasTemperature.h>');
+  Blockly.Arduino.addDeclaration('temp_', '#define ONE_WIRE_BUS_16');
+  Blockly.Arduino.addDeclaration('temp_1', 'OneWire oneWire(ONE_WIRE_BUS);');
+  Blockly.Arduino.addDeclaration('temp_2', 'DallasTemperature tempsensors(&oneWire);');
+  //Blockly.Arduino.addSetup('pixy_', 'Serial.begin(115200);');
+  Blockly.Arduino.addSetup('temp_1', 'tempsensors.begin();');
+  var code = 'tempsensors.requestTemperatures();\n';
+  return code;
+};
+
 
 Blockly.Arduino['initialize_sensors'] = function(block) {
-  var statements_initialize_sensors = Blockly.Arduino.statementToCode(block, 'Initialize_sensors');
+  var statements_initialize_sensors = Blockly.Arduino.statementToCode(block, 'Initialize_IR_sensors');
   // TODO: Assemble Arduino into code variable.
   Blockly.Arduino.addDeclaration( 'left_ir','int'+' left_sensor_status;');
   Blockly.Arduino.addDeclaration( 'right_ir','int'+' right_sensor_status;');
@@ -114,6 +134,16 @@ Blockly.Arduino['number_input'] = function(block) {
   // TODO: Assemble Arduino into code variable.
   var code = text_number;
   // TODO: Change ORDER_NONE to the correct strength.
+  return code;
+};
+Blockly.Arduino['new_ir'] = function(block) {
+  var text_sensor_name = block.getFieldValue('sensor_name');
+  var text_module_num = block.getFieldValue('module_num');
+  var text_status_num = block.getFieldValue('status_num');
+  // TODO: Assemble Arduino into code variable.
+  //Blockly.Arduino.addDeclaration( text_module_num,'int'+' left_sensor_status;');
+  //var state = 'int left_ir';
+  var code = 'int '+text_sensor_name+' = my_robot.module'+text_module_num+'_sensor_status('+text_status_num+');\n';
   return code;
 };
 Blockly.Arduino['left_ir'] = function(block) {

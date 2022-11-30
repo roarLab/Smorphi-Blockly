@@ -24,7 +24,12 @@ Blockly.Arduino['serialbt_read'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Arduino.ORDER_NONE];
 };
-
+Blockly.Arduino['temp_sensor_status'] = function(block) {
+  // TODO: Assemble Arduino into code variable.
+  var code = 'tempsensors.getTempCByIndex(0)';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Arduino.ORDER_NONE];
+};
 Blockly.Arduino['right_sensor_status'] = function(block) {
   // TODO: Assemble Arduino into code variable.
   var code = 'right_sensor_status';

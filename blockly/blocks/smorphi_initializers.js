@@ -79,6 +79,21 @@ init: function() {
   this.setTooltip('');
 }
 };
+Blockly.Blocks['initialize_temp_sensors'] = {
+  /**
+ * Block for if/elseif/else condition.
+ * @this Blockly.Block
+ */
+init: function() {
+  this.setHelpUrl('http://www.example.com/');
+  this.setColour(120);
+  this.appendDummyInput()
+      .appendField("Initialize Temperature Sensor");
+  this.setPreviousStatement(true, "null");
+  this.setNextStatement(true, "null");
+  this.setTooltip('');
+}
+};
 
 Blockly.Blocks['initialize_sensors'] = {
   init: function() {
@@ -125,6 +140,20 @@ Blockly.Blocks['number_input'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldTextInput("0"), "number");
     this.setOutput(true, "String");
+    this.setColour(210);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+Blockly.Blocks['new_ir'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("sensor_name"), "sensor_name")
+        .appendField(new Blockly.FieldTextInput("module_num"), "module_num")
+        .appendField(new Blockly.FieldTextInput("status_num"), "status_num");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, "String");
+    this.setNextStatement(true, "String");
     this.setColour(210);
     this.setTooltip('');
     this.setHelpUrl('http://www.example.com/');

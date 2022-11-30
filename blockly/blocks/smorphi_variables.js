@@ -54,6 +54,16 @@ Blockly.Blocks['serialbt_read'] = {
     this.setHelpUrl('http://www.example.com/');
   }
 };
+Blockly.Blocks['temp_sensor_status'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Temp_Sensor_State");
+    this.setOutput(true, null);
+    this.setColour(210);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
  Blockly.Blocks['right_sensor_status'] = {
   init: function() {
     this.appendDummyInput()
