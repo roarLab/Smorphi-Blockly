@@ -63,8 +63,8 @@ Blockly.Arduino['initialize_pixycam'] = function(block) {
  */
   var pixyName = 'pixy';
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.addInclude('pixy', '#include <Pixy2I2C.h>');
-  Blockly.Arduino.addDeclaration('pixy_', 'Pixy2I2C ' + pixyName + ';');
+  Blockly.Arduino.addInclude('pixy', '#include <Pixy2ICSP_ESP32.h>');
+  Blockly.Arduino.addDeclaration('pixy_', 'Pixy2ICSP_ESP32 ' + pixyName + ';');
   Blockly.Arduino.addDeclaration('smorphi_1', 'int color_signature;');
   //Blockly.Arduino.addSetup('pixy_', 'Serial.begin(115200);');
   Blockly.Arduino.addSetup('pixy_1', 'pixy.init();');

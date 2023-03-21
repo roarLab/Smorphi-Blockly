@@ -41,6 +41,7 @@ Ardublockly.TOOLBOX_XML =
 '  <category id="catSmorphi_action" name="Smorphi_Actions">' +
 '    <block type="robot_motion"></block>' +
 '    <block type="robot_shape"></block>' +
+'    <block type="pixy_lights"></block>' +
 '    <block type="sm_reset"></block>' +
 '    <block type="motion_set_type"></block>' +
 '    <block type="smorphi_time_delay"></block>' +

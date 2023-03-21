@@ -38,7 +38,7 @@ goog.require('Blockly.Events');
   init: function() {
     this.appendValueInput("NAME")
         .setCheck("Number")
-        .appendField(new Blockly.FieldDropdown([["Move_Forward", "MoveForward"], ["Move_Backward", "MoveBackward"], ["Move_Right", "MoveRight"], ["Move_Left", "MoveLeft"], ["Rotate_Right", "CenterPivotRight"], ["Rotate_Left", "CenterPivotLeft"], ["Stop", "stopSmorphi"]]), "NAME");
+        .appendField(new Blockly.FieldDropdown([["Move_Forward", "MoveForward"], ["Move_Backward", "MoveBackward"], ["Move_Right", "MoveRight"], ["Move_Left", "MoveLeft"], ["Rotate_Right", "CenterPivotRight"], ["Rotate_Left", "CenterPivotLeft"],["Diag_UpLeft", "MoveDiagUpLeft"],["Diag_UpRight", "MoveDiagUpRight"],["Diag_DownLeft", "MoveDiagDownLeft"],["Diag_DownRight", "MoveDiagDownRight"], ["Stop", "stopSmorphi"]]), "NAME");
     this.setPreviousStatement(true, "String");
     this.setNextStatement(true, "String");
     this.setColour(20);
@@ -46,11 +46,24 @@ goog.require('Blockly.Events');
     this.setHelpUrl('http://www.example.com/');
   }
 };
+
 Blockly.Blocks['robot_shape'] = {
   init: function() {
     this.appendValueInput("NAME")
         .setCheck("Number")
         .appendField(new Blockly.FieldDropdown([["I_shape", "I"], ["O_shape", "O"], ["L_shape", "L"], ["J_shape", "J"], ["T_shape", "T"], ["S_shape", "S"], ["Z_shape", "Z"]]), "NAME");
+    this.setPreviousStatement(true, "String");
+    this.setNextStatement(true, "String");
+    this.setColour(20);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+Blockly.Blocks['pixy_lights'] = {
+  init: function() {
+    this.appendValueInput("NAME")
+        .setCheck("Number")
+        .appendField(new Blockly.FieldDropdown([["Pixycam_Lights_ON", "1"], ["Pixycam_Lights_OFF", "0"]]), "NAME");
     this.setPreviousStatement(true, "String");
     this.setNextStatement(true, "String");
     this.setColour(20);

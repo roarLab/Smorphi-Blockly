@@ -26,6 +26,13 @@ Blockly.Arduino['robot_shape'] = function(block) {
   var code = 'my_robot.'+dropdown_name+'();\n';
   return code;
 };
+Blockly.Arduino['pixy_lights'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_name = Blockly.Arduino.valueToCode(block, 'NAME', Blockly.Arduino.ORDER_ATOMIC);
+  // TODO: Assemble Arduino into code variable.
+  var code = 'pixy.setLamp('+dropdown_name+',0);\n';
+  return code;
+};
 Blockly.Arduino['sm_reset'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var value_name = Blockly.Arduino.valueToCode(block, 'NAME', Blockly.Arduino.ORDER_ATOMIC);
