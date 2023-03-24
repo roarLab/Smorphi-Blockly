@@ -17,7 +17,6 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="initialize_bluetooth"></block>' +
 '    <block type="initialize_pixycam"></block>' +
 '    <block type="initialize_temp_sensors"></block>' +
-'    <block type="initialize_sensors"></block>' +
 '    <block type="number_input"></block>' +
 '    <block type="new_ir"></block>'+
 '    <block type="right_ir"></block>'+

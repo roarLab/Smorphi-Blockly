@@ -68,7 +68,7 @@ Blockly.Arduino['initialize_pixycam'] = function(block) {
   Blockly.Arduino.addDeclaration('smorphi_1', 'int color_signature;');
   //Blockly.Arduino.addSetup('pixy_', 'Serial.begin(115200);');
   Blockly.Arduino.addSetup('pixy_1', 'pixy.init();');
-  var code = 'pixy.ccc.getBlocks();\n'+ 'if (pixy.ccc.numBlocks){\n'+'for (i=0; i<pixy.ccc.numBlocks; i++){\n'+
+  var code = 'pixy.ccc.getBlocks();\n'+ 'if (pixy.ccc.numBlocks){\n'+'for (int i=0; i<pixy.ccc.numBlocks; i++){\n'+
       'pixy.ccc.blocks[i].print();\n'+'color_signature = pixy.ccc.blocks[i].m_signature;\n}\n}\n';
   return code;
 };

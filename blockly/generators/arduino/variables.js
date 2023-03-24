@@ -37,7 +37,8 @@ Blockly.Arduino['variables_set'] = function(block) {
       Blockly.Arduino.ORDER_ASSIGNMENT) || '0';
   var varName = Blockly.Arduino.variableDB_.getName(
       block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
-  return varName + ' = ' + argument0 + ';\n';
+ // return varName + ' = ' + argument0 + ';\n';
+ return ' ';
 };
 
 /**
@@ -51,6 +52,6 @@ Blockly.Arduino['variables_set_type'] = function(block) {
       Blockly.Arduino.ORDER_ASSIGNMENT) || '0';
   var varType = Blockly.Arduino.getArduinoType_(
       Blockly.Types[block.getFieldValue('VARIABLE_SETTYPE_TYPE')]);
-  var code = '(' + varType + ')(' + argument0 + ')';
+  var code = '';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
