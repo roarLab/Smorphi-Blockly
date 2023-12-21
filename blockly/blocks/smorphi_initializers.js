@@ -79,6 +79,21 @@ init: function() {
   this.setTooltip('');
 }
 };
+Blockly.Blocks['initialize_humidity_sensor'] = {
+  /**
+ * Block for if/elseif/else condition.
+ * @this Blockly.Block
+ */
+init: function() {
+  this.setHelpUrl('http://www.example.com/');
+  this.setColour(120);
+  this.appendDummyInput()
+      .appendField("Initialize Humidity_Sensor");
+  this.setPreviousStatement(true, "null");
+  this.setNextStatement(true, "null");
+  this.setTooltip('');
+}
+};
 Blockly.Blocks['initialize_temp_sensors'] = {
   /**
  * Block for if/elseif/else condition.

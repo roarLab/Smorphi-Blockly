@@ -72,6 +72,24 @@ Blockly.Arduino['initialize_pixycam'] = function(block) {
       'pixy.ccc.blocks[i].print();\n'+'color_signature = pixy.ccc.blocks[i].m_signature;\n}\n}\n';
   return code;
 };
+Blockly.Arduino['initialize_humidity_sensor'] = function(block) {
+  /**
+ * Code generator to create if/if else/else statement.
+ * Arduino code: loop { if (X)/else if ()/else { X } }
+ * @param {!Blockly.Block} block Block to generate the code from.
+ * @return {string} Completed code.
+ */
+  var pixyName = 'pixy';
+  // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.addInclude('hdt', ' #include <DHT.h>');
+  Blockly.Arduino.addDeclaration('hdt_', '#define DHTPIN 16');
+  Blockly.Arduino.addDeclaration('hdt_1', '#define DHTTYPE DHT11');
+  Blockly.Arduino.addDeclaration('hdt_2', 'DHT dht(DHTPIN, DHTTYPE);');
+  //Blockly.Arduino.addSetup('pixy_', 'Serial.begin(115200);');
+  Blockly.Arduino.addSetup('hdt_', 'dht.begin();');
+  var code = 'float humidity = dht.readHumidity();\n'+ 'float temperature = dht.readTemperature();\n';
+  return code;
+};
 
 Blockly.Arduino['initialize_temp_sensors'] = function(block) {
   /**
@@ -84,7 +102,7 @@ Blockly.Arduino['initialize_temp_sensors'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   Blockly.Arduino.addInclude('pixy', '#include <OneWire.h>');
   Blockly.Arduino.addInclude('pixy', '#include <DallasTemperature.h>');
-  Blockly.Arduino.addDeclaration('temp_', '#define ONE_WIRE_BUS_16');
+  Blockly.Arduino.addDeclaration('temp_', '#define ONE_WIRE_BUS 16');
   Blockly.Arduino.addDeclaration('temp_1', 'OneWire oneWire(ONE_WIRE_BUS);');
   Blockly.Arduino.addDeclaration('temp_2', 'DallasTemperature tempsensors(&oneWire);');
   //Blockly.Arduino.addSetup('pixy_', 'Serial.begin(115200);');
