@@ -29,11 +29,36 @@ goog.provide('Blockly.Blocks.smorphi_initializers');
 goog.require('Blockly.Blocks');
 goog.require('Blockly.Types');
 goog.require('Blockly.Events');
+Blockly.Blocks.procedures.HUE = 290;
 
 
 /**
  * Common HSV hue for all blocks in this category.
  */
+Blockly.Blocks['smorphi_function_initializer'] = {
+  /**
+   * Block for defining the Arduino setup() and loop() functions.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Smorphi-Setup");
+    this.appendStatementInput('SETUP_FUNC');
+    this.appendDummyInput()
+        .appendField("Smorphi-Loop");
+    this.appendStatementInput('LOOP_FUNC');
+    this.setInputsInline(false);
+    this.setColour(Blockly.Blocks.procedures.HUE);
+    this.setTooltip(Blockly.Msg.ARD_FUN_RUN_TIP);
+    this.setHelpUrl('https://arduino.cc/en/Reference/Loop');
+    this.contextMenu = false;
+  },
+  /** @return {!boolean} True if the block instance is in the workspace. */
+  getArduinoLoopsInstance: function() {
+    return true;
+  }
+};
+
  Blockly.Blocks['initialize_smorphi'] = {
     /**
    * Block for if/elseif/else condition.

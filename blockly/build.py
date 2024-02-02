@@ -225,6 +225,7 @@ class Gen_compressed(threading.Thread):
     # Add Blockly.Blocks to be compatible with the compiler.
     params.append(("js_code", "goog.provide('Blockly.Blocks');"))
     params.append(("js_code", "goog.provide('Blockly.Types');"))
+    params.append(("js_code", "goog.provide('Blockly.Events');"))
     filenames = []
     for root, folders, files in os.walk("blocks"):
         for filename in fnmatch.filter(files, "*.js"):

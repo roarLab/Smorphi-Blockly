@@ -23,12 +23,9 @@
  * @author q.neutron@gmail.com (Quynh Neutron)
  */
 'use strict';
-
 goog.provide('Blockly.Blocks.smorphi_variables');
-
 goog.require('Blockly.Blocks');
 goog.require('Blockly.Types');
-goog.require('Blockly.Events');
 
 
 /**

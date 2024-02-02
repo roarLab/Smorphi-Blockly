@@ -13,6 +13,7 @@ Ardublockly.TOOLBOX_XML =
 '<xml>' +
 '  <sep></sep>' +
 '  <category id="catSmorphi_initializers" name="Smorphi_Init">' +
+'    <block type="smorphi_function_initializer"></block>' +
 '    <block type="initialize_smorphi"></block>' +
 '    <block type="initialize_bluetooth"></block>' +
 '    <block type="initialize_pixycam"></block>' +

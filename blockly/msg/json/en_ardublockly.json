@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "carlosperate",
-		"lastupdated": "2022-08-22 11:48:43.172000",
+		"lastupdated": "2024-01-09 14:26:00.673000",
 		"locale": "en",
 		"messagedocumentation" : "qqq_ardublockly"
 	},
@@ -39,8 +39,8 @@
 	"ARD_MAP": "Map",
 	"ARD_MAP_VAL": "value to [0-",
 	"ARD_MAP_TIP": "Re-maps a number from [0-1024] to another.",
-	"ARD_FUN_RUN_SETUP": "Smorphi setup:",
-	"ARD_FUN_RUN_LOOP": "Smorphi loop forever:",
+	"ARD_FUN_RUN_SETUP": "Arduino run first:",
+	"ARD_FUN_RUN_LOOP": "Arduino loop forever:",
 	"ARD_FUN_RUN_TIP": "Defines the Arduino setup() and loop() functions.",
 	"ARD_PIN_WARN1": "Pin %1 is needed for %2 as pin %3. Already used as %4.",
 	"ARD_SERIAL_SETUP": "Setup",

@@ -12,6 +12,35 @@ goog.provide('Blockly.Arduino.smorphi_initializers');
 
 goog.require('Blockly.Arduino');
 
+Blockly.Arduino['smorphi_function_initializer'] = function(block) {
+  var smorphiName = 'my_robot';
+  // TODO: Assemble JavaScript into code variable.
+  Blockly.Arduino.addInclude('smorphi', '#include <smorphi.h>');
+  Blockly.Arduino.addDeclaration('smorphi_', 'Smorphi ' + smorphiName + ';');
+  //Blockly.Arduino.addDeclaration('smorphi_1', 'String last_action = "";');
+  Blockly.Arduino.addSetup('smorphi_0', 'Serial.begin(115200);');
+  Blockly.Arduino.addSetup('smorphi_1', 'my_robot.BeginSmorphi();');
+  // Edited version of Blockly.Generator.prototype.statementToCode
+  function statementToCodeNoTab(block, name) {
+    var targetBlock = block.getInputTargetBlock(name);
+    var code = Blockly.Arduino.blockToCode(targetBlock);
+    if (!goog.isString(code)) {
+      throw 'Expecting code from statement block "' + targetBlock.type + '".';
+    }
+    return code;
+  }
+
+  var setupBranch = Blockly.Arduino.statementToCode(block, 'SETUP_FUNC');
+  //var setupCode = Blockly.Arduino.scrub_(block, setupBranch); No comment block
+  if (setupBranch) {
+    Blockly.Arduino.addSetup('userSetupCode', setupBranch, true);
+  }
+
+  var loopBranch = statementToCodeNoTab(block, 'LOOP_FUNC');
+  //var loopcode = Blockly.Arduino.scrub_(block, loopBranch); No comment block
+  return loopBranch;
+};
+
 Blockly.Arduino['initialize_smorphi'] = function(block) {
   /**
  * Code generator to create if/if else/else statement.
@@ -100,8 +129,8 @@ Blockly.Arduino['initialize_temp_sensors'] = function(block) {
  */
   //var pixyName = 'pixy';
   // TODO: Assemble JavaScript into code variable.
-  Blockly.Arduino.addInclude('pixy', '#include <OneWire.h>');
-  Blockly.Arduino.addInclude('pixy', '#include <DallasTemperature.h>');
+  //Blockly.Arduino.addInclude('pixy', '#include <OneWire.h>');
+  Blockly.Arduino.addInclude('temp', '#include <DallasTemperature.h>');
   Blockly.Arduino.addDeclaration('temp_', '#define ONE_WIRE_BUS 16');
   Blockly.Arduino.addDeclaration('temp_1', 'OneWire oneWire(ONE_WIRE_BUS);');
   Blockly.Arduino.addDeclaration('temp_2', 'DallasTemperature tempsensors(&oneWire);');

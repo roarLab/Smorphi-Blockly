@@ -28,10 +28,11 @@
 goog.provide('Blockly');
 
 goog.require('Blockly.BlockSvg.render');
-goog.require('Blockly.Events');
+
 goog.require('Blockly.FieldAngle');
 goog.require('Blockly.FieldCheckbox');
 goog.require('Blockly.FieldColour');
+goog.require('Blockly.Events');
 // Date picker commented out since it increases footprint by 60%.
 // Add it only if you need it.
 //goog.require('Blockly.FieldDate');
@@ -53,7 +54,9 @@ goog.require('Blockly.inject');
 goog.require('Blockly.utils');
 goog.require('goog.color');
 goog.require('goog.userAgent');
-
+goog.require('goog.events.EventWrapper');
+goog.require('goog.debug.ErrorHandler');
+goog.require('goog.events.EventLike');
 
 // Turn off debugging when compiled.
 var CLOSURE_DEFINES = {'goog.DEBUG': false};
